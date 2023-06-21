@@ -20,7 +20,7 @@ from models.models import (
     Source,
 )
 
-WEAVIATE_URL_DEFAULT = "http://localhost:8080"
+WEAVIATE_URL_DEFAULT = "https://qkkaupkrrpgbpwbekvzvw.gcp-c.weaviate.cloud"
 WEAVIATE_CLASS = os.environ.get("WEAVIATE_CLASS", "OpenAIDocument")
 
 WEAVIATE_BATCH_SIZE = int(os.environ.get("WEAVIATE_BATCH_SIZE", 20))
@@ -145,6 +145,7 @@ class WeaviateDataStore(DataStore):
                 raise ValueError("WEAVIATE_API_KEY environment variable is not set")
         else:
             return None
+
 
     async def _upsert(self, chunks: Dict[str, List[DocumentChunk]]) -> List[str]:
         """
