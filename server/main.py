@@ -38,7 +38,7 @@ sub_app = FastAPI(
     title="VNTANA Retrieval Plugin API",
     description="A retrieval API for querying and filtering documents based on natural language queries and metadata",
     version="1.0.0",
-    servers=[{"url": "https://your-app-url.com"}],
+    servers=[{"url": "https://protected-river-88257-88dfbbd6043a.herokuapp.com/"}],
     dependencies=[Depends(validate_token)],
 )
 app.mount("/sub", sub_app)
